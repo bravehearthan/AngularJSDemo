@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app='MsgApp'>
+<head>
+	<title>Expressions and Interpolation</title>
+	<script src="angular.min.js"></script>
+	<script src="app.js"></script>
+</head>
+
+<body>
+	<h1>Expressions and Interpolation</h1>
+	<div ng-controller='MsgControllers'>
+		{{name}} has message for you: <br>
+		Original: {{sayMessage()}} 
+		<br />
+		Filter:   {{ sayLovesMessage() }}
+		<br />
+		Truth Filter: {{sayLovesMessage() | truth :'healthy' : 'cookie'}}
+		<br />
+		Big Truth Filter: {{sayLovesMessage() | truth :'healthy' : 'cookie' | uppercase }}
+
+		<div>
+			<button ng-click="feedJude()">Feed Jude</button>
+			<br/>
+			<img ng-src="jude_{{stateOfBeing}}.jpg" width="300px" height="400px">
+		</div>		
+	</div>
+</body>
+
+</html>
